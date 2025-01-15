@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Custom Stopwatch</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        text-align: center;
+        padding: 50px;
+      }
+      #stopwatch {
+        font-size: 48px;
+        font-weight: bold;
+        color: #333;
+      }
+      .label {
+        font-size: 24px;
+        color: #666;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Albatross...</h1>
+    <p class="label">I h've been counting the days⌛</p>
+    <div id="stopwatch">Loading...</div>
+
+    <script>
+      function startStopwatch() {
+        const startDate = new Date("January 8, 2025 20:30:00").getTime();
+        const updateStopwatch = () => {
+          const now = new Date().getTime();
+          const elapsedTime = now - startDate;
+
+          const days = Math.floor(elapsedTime / (1000 * 60 * 60 * 24));
+          const hours = Math.floor(
+            (elapsedTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+          );
+          const minutes = Math.floor(
+            (elapsedTime % (1000 * 60 * 60)) / (1000 * 60)
+          );
+          const seconds = Math.floor((elapsedTime % (1000 * 60)) / 1000);
+
+          document.getElementById(
+            "stopwatch"
+          ).innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+        };
+
+        updateStopwatch();
+        setInterval(updateStopwatch, 1000);
+      }
+
+      window.onload = startStopwatch;
+    </script>
+  </body>
+</html>
