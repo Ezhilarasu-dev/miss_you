@@ -6,19 +6,44 @@
     <title>Custom Stopwatch</title>
     <style>
       body {
-        font-family: Arial, sans-serif;
-        background-color: #f0f0f0;
+        font-family: "Arial", sans-serif;
         text-align: center;
-        padding: 50px;
+        background: linear-gradient(
+          135deg,
+          #84fab0 0%,
+          #8fd3f4 50%,
+          #a6c1ee 100%
+        );
+        color: #333;
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
       }
       #stopwatch {
         font-size: 48px;
         font-weight: bold;
-        color: #333;
+        text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
       }
       .label {
         font-size: 24px;
         color: #666;
+      }
+
+      p {
+        font-size: 24px;
+        color: #e7f5fe;
+        margin: 10px 0;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+      }
+
+      h1 {
+        margin: 0;
+        color: #ffffff;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
       }
     </style>
   </head>
